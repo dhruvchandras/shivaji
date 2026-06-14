@@ -1,6 +1,84 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Fort } from "@/data/forts";
+
+interface WikiImage {
+  url: string;
+  caption: string;
+}
+
+function useWikiImages(wikipediaTitle: string): { images: WikiImage[]; loading: boolean } {
+  const [images, setImages] = useState<WikiImage[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    setImages([]);
+
+    const controller = new AbortController();
+
+    // Fetch page summary (has thumbnail) + page images list
+    Promise.all([
+      fetch(
+        `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(wikipediaTitle)}`,
+        { signal: controller.signal }
+      ).then(r => r.ok ? r.json() : null).catch(() => null),
+
+      fetch(
+        `https://en.wikipedia.org/w/api.php?action=query&titles=${encodeURIComponent(wikipediaTitle)}&prop=images&imlimit=10&format=json&origin=*`,
+        { signal: controller.signal }
+      ).then(r => r.ok ? r.json() : null).catch(() => null),
+    ]).then(([summary, imagesData]) => {
+      const collected: WikiImage[] = [];
+
+      // Primary thumbnail from summary
+      if (summary?.thumbnail?.source) {
+        // Get a larger version by bumping the pixel width
+        const bigThumb = summary.thumbnail.source.replace(/\/\d+px-/, "/800px-");
+        collected.push({ url: bigThumb, caption: summary.title ?? wikipediaTitle });
+      }
+
+      // Additional images from page images API
+      if (imagesData?.query?.pages) {
+        const page = Object.values(imagesData.query.pages)[0] as any;
+        const fileNames: string[] = (page?.images ?? [])
+          .map((img: any) => img.title as string)
+          .filter((t: string) => /\.(jpg|jpeg|png)$/i.test(t) && !/flag|logo|icon|map|seal|coat/i.test(t))
+          .slice(0, 4);
+
+        if (fileNames.length > 0) {
+          fetch(
+            `https://en.wikipedia.org/w/api.php?action=query&titles=${fileNames.map(encodeURIComponent).join("|")}&prop=imageinfo&iiprop=url&iiurlwidth=800&format=json&origin=*`,
+            { signal: controller.signal }
+          )
+            .then(r => r.ok ? r.json() : null)
+            .then(data => {
+              if (!data?.query?.pages) return;
+              const extra: WikiImage[] = Object.values(data.query.pages)
+                .map((p: any) => {
+                  const info = p.imageinfo?.[0];
+                  return info?.thumburl ? { url: info.thumburl, caption: p.title?.replace("File:", "").replace(/_/g, " ").replace(/\.[^.]+$/, "") ?? "" } : null;
+                })
+                .filter(Boolean) as WikiImage[];
+
+              setImages(prev => {
+                const seen = new Set(prev.map(i => i.url));
+                return [...prev, ...extra.filter(e => !seen.has(e.url))];
+              });
+            })
+            .catch(() => {});
+        }
+      }
+
+      setImages(collected);
+      setLoading(false);
+    });
+
+    return () => controller.abort();
+  }, [wikipediaTitle]);
+
+  return { images, loading };
+}
 
 interface FortPopupProps {
   fort: Fort;
@@ -9,9 +87,9 @@ interface FortPopupProps {
 
 export default function FortPopup({ fort, onClose }: FortPopupProps) {
   const [photoIndex, setPhotoIndex] = useState(0);
-  const [imgError, setImgError] = useState<Record<number, boolean>>({});
+  const { images, loading } = useWikiImages(fort.wikipediaTitle);
 
-  const photos = fort.photos.length > 0 ? fort.photos : [{ url: "", caption: "No image available" }];
+  const photos = images.length > 0 ? images : [];
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/60" onClick={onClose}>
@@ -20,47 +98,49 @@ export default function FortPopup({ fort, onClose }: FortPopupProps) {
         onClick={e => e.stopPropagation()}
       >
         {/* Photo carousel */}
-        <div className="relative w-full h-52 bg-black rounded-t-xl overflow-hidden">
-          {photos[photoIndex] && !imgError[photoIndex] ? (
-            <img
-              src={photos[photoIndex].url}
-              alt={photos[photoIndex].caption}
-              className="w-full h-full object-cover"
-              onError={() => setImgError(prev => ({ ...prev, [photoIndex]: true }))}
-            />
+        <div className="relative w-full h-52 bg-[#1a0e05] rounded-t-xl overflow-hidden">
+          {loading ? (
+            <div className="w-full h-full flex items-center justify-center">
+              <div className="text-[#c8973a] text-xs animate-pulse">Loading photos…</div>
+            </div>
+          ) : photos.length > 0 && photos[photoIndex] ? (
+            <>
+              <img
+                key={photos[photoIndex].url}
+                src={photos[photoIndex].url}
+                alt={photos[photoIndex].caption}
+                className="w-full h-full object-cover"
+                onError={e => (e.currentTarget.style.display = "none")}
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-xs px-3 py-1 truncate">
+                {photos[photoIndex].caption}
+              </div>
+              {photos.length > 1 && (
+                <>
+                  <button
+                    className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full w-7 h-7 flex items-center justify-center hover:bg-black/80 transition"
+                    onClick={() => setPhotoIndex(i => (i - 1 + photos.length) % photos.length)}
+                  >‹</button>
+                  <button
+                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full w-7 h-7 flex items-center justify-center hover:bg-black/80 transition"
+                    onClick={() => setPhotoIndex(i => (i + 1) % photos.length)}
+                  >›</button>
+                  <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-1">
+                    {photos.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setPhotoIndex(i)}
+                        className={`w-2 h-2 rounded-full transition ${i === photoIndex ? "bg-[#c8973a]" : "bg-white/50"}`}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+            </>
           ) : (
-            <div className="w-full h-full flex items-center justify-center bg-[#1a0e05]">
+            <div className="w-full h-full flex items-center justify-center">
               <span className="text-[#c8973a] text-4xl">🏯</span>
             </div>
-          )}
-          {/* Caption overlay */}
-          {photos[photoIndex] && (
-            <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-xs px-3 py-1">
-              {photos[photoIndex].caption}
-            </div>
-          )}
-          {/* Nav arrows */}
-          {photos.length > 1 && (
-            <>
-              <button
-                className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full w-7 h-7 flex items-center justify-center hover:bg-black/80 transition"
-                onClick={() => setPhotoIndex(i => (i - 1 + photos.length) % photos.length)}
-              >‹</button>
-              <button
-                className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full w-7 h-7 flex items-center justify-center hover:bg-black/80 transition"
-                onClick={() => setPhotoIndex(i => (i + 1) % photos.length)}
-              >›</button>
-              {/* Dots */}
-              <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-1">
-                {photos.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setPhotoIndex(i)}
-                    className={`w-2 h-2 rounded-full transition ${i === photoIndex ? "bg-[#c8973a]" : "bg-white/50"}`}
-                  />
-                ))}
-              </div>
-            </>
           )}
           {/* Close button */}
           <button
@@ -71,7 +151,6 @@ export default function FortPopup({ fort, onClose }: FortPopupProps) {
 
         {/* Content */}
         <div className="p-4 space-y-4 text-sm text-[#e8d5b0]">
-          {/* Header */}
           <div>
             <h2 className="text-xl font-bold text-[#f5c842]">{fort.name}</h2>
             {fort.aliases.length > 0 && (
@@ -122,6 +201,10 @@ export default function FortPopup({ fort, onClose }: FortPopupProps) {
             <p><span className="text-[#c8973a]">Condition:</span> {fort.condition}</p>
             {fort.canVisit && <p className="mt-1"><span className="text-[#c8973a]">Visiting:</span> {fort.visitInfo}</p>}
           </Section>
+
+          <p className="text-[#a08060] text-[10px] border-t border-[#c8973a]/20 pt-2">
+            Photos sourced from Wikipedia · <a href={`https://en.wikipedia.org/wiki/${fort.wikipediaTitle}`} target="_blank" rel="noopener noreferrer" className="underline hover:text-[#c8973a]">Read more on Wikipedia</a>
+          </p>
         </div>
       </div>
     </div>

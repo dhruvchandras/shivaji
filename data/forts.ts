@@ -23,6 +23,8 @@ export interface Fort {
   visitInfo: string;
   activeEras: Era[];
   photos: FortPhoto[];
+  // Wikipedia article title used to fetch real thumbnail via REST API
+  wikipediaTitle: string;
 }
 
 export const forts: Fort[] = [
@@ -59,11 +61,8 @@ export const forts: Fort[] = [
     canVisit: true,
     visitInfo: "Open year-round. A ropeway from the base village Pachad makes it accessible. Best visited October–February.",
     activeEras: ["shivaji", "post", "peak", "decline", "today"],
-    photos: [
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Raigad_Fort.jpg/1280px-Raigad_Fort.jpg", caption: "Raigad Fort from below" },
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Raigad_Fort_gate.jpg/1280px-Raigad_Fort_gate.jpg", caption: "Main entrance gate" },
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Samadhi_of_Shivaji%2C_Raigad.jpg/1280px-Samadhi_of_Shivaji%2C_Raigad.jpg", caption: "Samadhi of Shivaji Maharaj" }
-    ]
+    wikipediaTitle: "Raigad_Fort",
+    photos: []
   },
   {
     id: "sinhagad",
@@ -98,10 +97,8 @@ export const forts: Fort[] = [
     canVisit: true,
     visitInfo: "30 km from Pune. Trek takes 1–2 hours. Best Oct–Feb. Can also drive 4 km up to the base of the final climb.",
     activeEras: ["pre", "shivaji", "post", "peak", "decline", "today"],
-    photos: [
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Sinhagad_fort.jpg/1280px-Sinhagad_fort.jpg", caption: "Sinhagad Fort panorama" },
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Sinhagad_entrance.jpg/1280px-Sinhagad_entrance.jpg", caption: "Fort entrance" }
-    ]
+    wikipediaTitle: "Sinhagad",
+    photos: []
   },
   {
     id: "pratapgad",
@@ -133,10 +130,8 @@ export const forts: Fort[] = [
     canVisit: true,
     visitInfo: "Near Mahabaleshwar, ~23 km. Accessible by road. Temple at the top open daily. Best visited monsoon for dramatic scenery.",
     activeEras: ["shivaji", "post", "peak", "decline", "today"],
-    photos: [
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pratapgad_fort.jpg/1280px-Pratapgad_fort.jpg", caption: "Pratapgad Fort" },
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Bhavani_temple_pratapgad.jpg/1280px-Bhavani_temple_pratapgad.jpg", caption: "Bhavani Temple inside the fort" }
-    ]
+    wikipediaTitle: "Pratapgad",
+    photos: []
   },
   {
     id: "rajgad",
@@ -169,10 +164,8 @@ export const forts: Fort[] = [
     canVisit: true,
     visitInfo: "60 km from Pune. Trek to top takes 3–4 hours. Camping allowed on the plateaus. Best Oct–Feb.",
     activeEras: ["shivaji", "post", "peak", "decline", "today"],
-    photos: [
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Rajgad_fort.jpg/1280px-Rajgad_fort.jpg", caption: "Rajgad Fort aerial view" },
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Rajgad_balekilla.jpg/1280px-Rajgad_balekilla.jpg", caption: "Balekilla (inner citadel)" }
-    ]
+    wikipediaTitle: "Rajgad_Fort",
+    photos: []
   },
   {
     id: "torna",
@@ -207,9 +200,8 @@ export const forts: Fort[] = [
     canVisit: true,
     visitInfo: "80 km from Pune. Tough 3–4 hour trek. Ideal for experienced trekkers. Best Oct–Feb.",
     activeEras: ["pre", "shivaji", "post", "peak", "decline", "today"],
-    photos: [
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Torna_fort.jpg/1280px-Torna_fort.jpg", caption: "Torna Fort" }
-    ]
+    wikipediaTitle: "Torna_Fort",
+    photos: []
   },
   {
     id: "purandar",
@@ -243,9 +235,8 @@ export const forts: Fort[] = [
     canVisit: true,
     visitInfo: "50 km south of Pune. Civilian access is restricted to portions near the temple. Check current Indian Army permissions.",
     activeEras: ["pre", "shivaji", "post", "peak", "decline", "today"],
-    photos: [
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Purandar_fort.jpg/1280px-Purandar_fort.jpg", caption: "Purandar Fort" }
-    ]
+    wikipediaTitle: "Purandar_Fort",
+    photos: []
   },
   {
     id: "shivneri",
@@ -278,10 +269,8 @@ export const forts: Fort[] = [
     canVisit: true,
     visitInfo: "4 km from Junnar town, 90 km from Pune. Easy 30-minute trek. Open all days.",
     activeEras: ["pre", "shivaji", "post", "peak", "decline", "today"],
-    photos: [
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Shivneri_Fort.jpg/1280px-Shivneri_Fort.jpg", caption: "Shivneri Fort — Shivaji's birthplace" },
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Shivneri_fort_entrance.jpg/1280px-Shivneri_fort_entrance.jpg", caption: "Entrance to Shivneri" }
-    ]
+    wikipediaTitle: "Shivneri",
+    photos: []
   },
   {
     id: "panhala",
@@ -318,10 +307,8 @@ export const forts: Fort[] = [
     canVisit: true,
     visitInfo: "18 km from Kolhapur city. Easily accessible by road. Can walk the entire 7 km perimeter. Year-round.",
     activeEras: ["pre", "shivaji", "post", "peak", "decline", "today"],
-    photos: [
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Panhala_fort_gate.jpg/1280px-Panhala_fort_gate.jpg", caption: "Panhala Fort main gate" },
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Panhala_Fort_walls.jpg/1280px-Panhala_Fort_walls.jpg", caption: "Massive fort walls" }
-    ]
+    wikipediaTitle: "Panhala",
+    photos: []
   },
   {
     id: "vijaydurg",
@@ -355,9 +342,8 @@ export const forts: Fort[] = [
     canVisit: true,
     visitInfo: "Near Vijaydurg village, Sindhudurg district. Accessible by road or small boat. Open daily.",
     activeEras: ["pre", "shivaji", "post", "peak", "decline", "today"],
-    photos: [
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Vijaydurg_Fort.jpg/1280px-Vijaydurg_Fort.jpg", caption: "Vijaydurg sea fort" }
-    ]
+    wikipediaTitle: "Vijaydurg",
+    photos: []
   },
   {
     id: "lohagad",
@@ -393,10 +379,8 @@ export const forts: Fort[] = [
     canVisit: true,
     visitInfo: "65 km from Pune near Lonavala. 2–3 hour trek. Very popular with Pune trekkers. Can also visit nearby Visapur.",
     activeEras: ["pre", "shivaji", "post", "peak", "decline", "today"],
-    photos: [
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Lohagad_Fort.jpg/1280px-Lohagad_Fort.jpg", caption: "Lohagad Fort" },
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Lohagad_gates.jpg/1280px-Lohagad_gates.jpg", caption: "The four gates of Lohagad" }
-    ]
+    wikipediaTitle: "Lohagad",
+    photos: []
   },
   {
     id: "sindhudurg",
@@ -430,10 +414,8 @@ export const forts: Fort[] = [
     canVisit: true,
     visitInfo: "Accessible by boat from Malvan town, Sindhudurg district. Boats run daily 8am–5pm. Entry fee applies.",
     activeEras: ["shivaji", "post", "peak", "decline", "today"],
-    photos: [
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sindhudurg_fort.jpg/1280px-Sindhudurg_fort.jpg", caption: "Sindhudurg sea fort" },
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Sindhudurg_fort_walls.jpg/1280px-Sindhudurg_fort_walls.jpg", caption: "Fort walls from the sea" }
-    ]
+    wikipediaTitle: "Sindhudurg_Fort",
+    photos: []
   },
   {
     id: "tikona",
@@ -466,9 +448,8 @@ export const forts: Fort[] = [
     canVisit: true,
     visitInfo: "Near Pawna Lake, 60 km from Pune. 2-hour trek. Boat needed to cross part of the reservoir in monsoon.",
     activeEras: ["pre", "shivaji", "post", "peak", "decline", "today"],
-    photos: [
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Tikona_fort.jpg/1280px-Tikona_fort.jpg", caption: "Tikona Fort rising from Pawna Lake" }
-    ]
+    wikipediaTitle: "Tikona_Fort",
+    photos: []
   },
   {
     id: "murudjanjira",
@@ -505,10 +486,8 @@ export const forts: Fort[] = [
     canVisit: true,
     visitInfo: "Murud town, 165 km from Mumbai. Boats to the fort from Rajapuri jetty. No overnight stays. Open daily.",
     activeEras: ["pre", "shivaji", "post", "peak", "decline", "today"],
-    photos: [
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Janjira_fort.jpg/1280px-Janjira_fort.jpg", caption: "Murud-Janjira Fort" },
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Janjira_from_boat.jpg/1280px-Janjira_from_boat.jpg", caption: "Approaching by boat" }
-    ]
+    wikipediaTitle: "Murud-Janjira",
+    photos: []
   },
   {
     id: "harishchandragad",
@@ -539,10 +518,8 @@ export const forts: Fort[] = [
     canVisit: true,
     visitInfo: "145 km from Pune. Multiple routes from Khireshwar, Pachnai, or Nalichi Vaat. 4–5 hour trek. Camping popular.",
     activeEras: ["pre", "shivaji", "post", "peak", "decline", "today"],
-    photos: [
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Harishchandragad_konkan_kada.jpg/1280px-Harishchandragad_konkan_kada.jpg", caption: "Konkan Kada cliff face" },
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Harishchandreshwar_temple.jpg/1280px-Harishchandreshwar_temple.jpg", caption: "Ancient Harishchandreshwar temple" }
-    ]
+    wikipediaTitle: "Harishchandragad",
+    photos: []
   },
   {
     id: "salher",
@@ -575,9 +552,8 @@ export const forts: Fort[] = [
     canVisit: true,
     visitInfo: "Near Nashik, 200 km from Pune. 3–4 hour trek. Camping on top plateau popular.",
     activeEras: ["pre", "shivaji", "post", "peak", "decline", "today"],
-    photos: [
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Salher_fort.jpg/1280px-Salher_fort.jpg", caption: "Salher Fort summit" }
-    ]
+    wikipediaTitle: "Salher_Fort",
+    photos: []
   },
   {
     id: "sudhagad",
@@ -608,9 +584,8 @@ export const forts: Fort[] = [
     canVisit: true,
     visitInfo: "Near Pali, 100 km from Mumbai. 2–3 hour trek. Year-round access.",
     activeEras: ["pre", "shivaji", "post", "peak", "decline", "today"],
-    photos: [
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Sudhagad_fort.jpg/1280px-Sudhagad_fort.jpg", caption: "Sudhagad Fort" }
-    ]
+    wikipediaTitle: "Sudhagad",
+    photos: []
   },
   {
     id: "khanderi",
@@ -642,9 +617,8 @@ export const forts: Fort[] = [
     canVisit: false,
     visitInfo: "Off the coast of Alibag. Not open to civilians — maintained by Indian Navy.",
     activeEras: ["shivaji", "post", "peak", "decline", "today"],
-    photos: [
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Khanderi_island.jpg/1280px-Khanderi_island.jpg", caption: "Khanderi Island Fort" }
-    ]
+    wikipediaTitle: "Khanderi_Island",
+    photos: []
   },
   {
     id: "rajmachi",
@@ -677,9 +651,8 @@ export const forts: Fort[] = [
     canVisit: true,
     visitInfo: "75 km from Mumbai, near Lonavala. 4–5 hour trek or jeep + trek. Camping at the village at the base. Popular year-round.",
     activeEras: ["pre", "shivaji", "post", "peak", "decline", "today"],
-    photos: [
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Rajmachi_fort.jpg/1280px-Rajmachi_fort.jpg", caption: "Rajmachi twin forts" }
-    ]
+    wikipediaTitle: "Rajmachi_Fort",
+    photos: []
   },
   {
     id: "kolaba",
@@ -711,9 +684,8 @@ export const forts: Fort[] = [
     canVisit: true,
     visitInfo: "Alibag beach, Maharashtra. Walk at low tide (~800m). Also reachable by boat any time. Check tide charts.",
     activeEras: ["shivaji", "post", "peak", "decline", "today"],
-    photos: [
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Kolaba_fort_alibag.jpg/1280px-Kolaba_fort_alibag.jpg", caption: "Kolaba Fort at low tide" }
-    ]
+    wikipediaTitle: "Kolaba_Fort",
+    photos: []
   },
   {
     id: "vasai",
@@ -745,10 +717,8 @@ export const forts: Fort[] = [
     canVisit: true,
     visitInfo: "Vasai, 50 km north of Mumbai. Accessible by train (Vasai Road station) + auto. Open all days, sunrise to sunset.",
     activeEras: ["pre", "shivaji", "peak", "decline", "today"],
-    photos: [
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Vasai_fort.jpg/1280px-Vasai_fort.jpg", caption: "Vasai Fort ruins" },
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Vasai_Fort_Church.jpg/1280px-Vasai_Fort_Church.jpg", caption: "Ruined Portuguese church inside the fort" }
-    ]
+    wikipediaTitle: "Vasai_Fort",
+    photos: []
   },
   {
     id: "satara",
@@ -782,9 +752,8 @@ export const forts: Fort[] = [
     canVisit: true,
     visitInfo: "Within Satara city. Short trek from base. Views over Satara city and surrounding hills.",
     activeEras: ["pre", "shivaji", "post", "peak", "decline", "today"],
-    photos: [
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Ajinkyatara_fort_satara.jpg/1280px-Ajinkyatara_fort_satara.jpg", caption: "Ajinkyatara (Satara) Fort" }
-    ]
+    wikipediaTitle: "Ajinkyatara",
+    photos: []
   },
   {
     id: "kondana",
@@ -813,8 +782,7 @@ export const forts: Fort[] = [
     canVisit: true,
     visitInfo: "Near Sinhagad, 30 km from Pune. Combined visit with Sinhagad trek possible.",
     activeEras: ["pre", "shivaji", "post", "peak", "decline", "today"],
-    photos: [
-      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Kondana_caves.jpg/1280px-Kondana_caves.jpg", caption: "Kondana Buddhist Caves" }
-    ]
+    wikipediaTitle: "Kondana_caves",
+    photos: []
   }
 ];

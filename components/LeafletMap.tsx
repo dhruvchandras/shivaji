@@ -26,6 +26,7 @@ function EraOverlays({ era }: { era: EraConfig }) {
             fillOpacity: region.opacity,
             weight: 1,
             opacity: 0.6,
+            interactive: false,
           }}
         />
       ))}
