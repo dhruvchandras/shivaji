@@ -1,5 +1,5 @@
 "use client";
-import { useCallback, useState } from "react";
+import { useMemo, useState, useCallback } from "react";
 import ReactFlow, {
   Node,
   Edge,
@@ -151,7 +151,13 @@ interface ReactFlowTreeProps {
 }
 
 export default function ReactFlowTree({ people, positions, onPersonClick }: ReactFlowTreeProps) {
-  const { nodes, edges } = buildGraph(people, positions, onPersonClick);
+  const onSelectRef = useCallback(onPersonClick, []); // stable ref — data is static
+  const { nodes, edges } = useMemo(
+    () => buildGraph(people, positions, onPersonClick),
+    // people and positions are module-level constants — this runs once
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
 
   return (
     <div style={{ width: "100%", height: "100%", background: "#0f0803" }}>
