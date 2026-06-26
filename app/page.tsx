@@ -25,7 +25,7 @@ export default function Home() {
             <h1 className="text-[#f5c842] font-bold text-lg leading-tight tracking-wide">
               Chhatrapati Shivaji Maharaj
             </h1>
-            <p className="text-[#c8973a] text-xs">Interactive History — Forts · Battles · Lineage</p>
+            <p className="text-[#c8973a] text-xs">Interactive History — Forts</p>
           </div>
         </div>
 
