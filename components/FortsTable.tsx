@@ -50,8 +50,8 @@ export default function FortsTable() {
                   {fort.aliases.length > 0 ? fort.aliases.join(", ") : "—"}
                 </td>
                 <td className="py-2.5 pr-4 text-xs text-[#c8973a]">{fort.builtYear}</td>
-                <td className="py-2.5 pr-4 text-xs hidden md:table-cell max-w-xs">
-                  <span className="line-clamp-2">{fort.whyBuilt.slice(0, 120)}{fort.whyBuilt.length > 120 ? "…" : ""}</span>
+                <td className="py-2.5 pr-4 text-xs hidden md:table-cell">
+                  <span>{fort.whyBuilt}</span>
                 </td>
                 <td className="py-2.5 pr-2 text-xs">
                   {fort.canVisit ? (
