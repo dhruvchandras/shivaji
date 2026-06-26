@@ -756,4 +756,363 @@ export const forts: Fort[] = [
     wikipediaTitle: "Ajinkyatara",
     photos: []
   },
+  {
+    id: "vishalgad",
+    name: "Vishalgad",
+    aliases: ["Khelna", "Khilna Fort"],
+    lat: 16.5487,
+    lng: 73.8627,
+    builtBy: "other",
+    builtYear: "c. 10th century; captured by Shivaji in 1659",
+    builder: "Shilahara dynasty; captured by Shivaji after the Battle of Pavan Khind",
+    whyBuilt: "Originally a highland stronghold of the Shilaharas, Vishalgad became historically immortal as the fort to which Shivaji escaped after the siege of Panhala. Baji Prabhu Deshpande and 300 Marathas held the Pavan Khind pass to delay Siddi Masud's forces until Shivaji reached safety here.",
+    battles: [
+      "Shivaji's escape from Panhala (1660) — Baji Prabhu Deshpande's legendary last stand at Pavan Khind kept the pursuing Bijapur army at bay",
+      "Siege by Aurangzeb's forces"
+    ],
+    ownershipHistory: [
+      "Shilahara dynasty",
+      "Bijapur Sultanate",
+      "Shivaji (1659) — renamed from Khelna to Vishalgad",
+      "Mughal forces briefly",
+      "Marathas",
+      "British (1844)"
+    ],
+    funFacts: [
+      "Named 'Vishalgad' (Grand Fort) by Shivaji after its capture, replacing the old name Khelna",
+      "Baji Prabhu Deshpande, one of Shivaji's most loyal commanders, sacrificed his life at Pavan Khind below this fort to save his king",
+      "Shivaji fired a cannon from the fort when he arrived safely — the signal Baji Prabhu was waiting for before he finally fell",
+      "The shrine of Hazrat Malik Rehan on the fort is venerated by both Hindus and Muslims"
+    ],
+    condition: "Partially restored ruins. Main gateway and some bastions stand.",
+    canVisit: true,
+    visitInfo: "Near Kolhapur, about 80 km. Base village Pargaon. Moderate trek of about 1 hour. Tribal homestays available nearby.",
+    activeEras: ["shivaji", "post", "peak", "decline", "today"],
+    wikipediaTitle: "Vishalgad",
+    photos: []
+  },
+  {
+    id: "suvarnadurg",
+    name: "Suvarnadurg",
+    aliases: ["Suvarnagiri", "Golden Fort"],
+    lat: 17.2750,
+    lng: 73.0775,
+    builtBy: "other",
+    builtYear: "c. 1660 (significantly fortified by Shivaji); earlier fort existed",
+    builder: "Earlier Bijapur Sultanate structure; massively expanded by Shivaji as a naval base",
+    whyBuilt: "Shivaji captured Suvarnadurg to anchor his naval power on the central Konkan coast. Paired with the onshore Kanakadurga and Fatehgad forts, it gave the Maratha navy complete control of the Harnai harbour, a key anchorage for the Angre naval fleet for generations.",
+    battles: [
+      "Shivaji captured it c. 1660 from the Bijapur Sultanate",
+      "Kanhoji Angre used it as one of his primary naval bases in the early 18th century",
+      "British and Portuguese joint naval assault (1755) — eventually captured"
+    ],
+    ownershipHistory: [
+      "Early local chieftains",
+      "Bijapur Sultanate",
+      "Shivaji (c. 1660)",
+      "Kanhoji Angre and successors — key Angre naval base",
+      "British and Peshwa forces (1755)"
+    ],
+    funFacts: [
+      "The name means 'Golden Fort' — likely referring to the golden glow of the basalt rock at sunrise",
+      "Suvarnadurg is a sea fort accessible only by boat, making it nearly impregnable",
+      "Listed as a UNESCO World Heritage Site in 2025 as part of Maratha Military Landscapes of India",
+      "The fort has a freshwater tank despite being entirely surrounded by the sea",
+      "Paired with two land forts — Kanakadurga and Fatehgad — forming a triangular defense system"
+    ],
+    condition: "Well-preserved sea fort. Stone walls, towers and a freshwater cistern intact.",
+    canVisit: true,
+    visitInfo: "Harnai village, Dapoli, Ratnagiri. Boat ride from Harnai jetty (10–15 min). UNESCO WHS — best visited with a guide.",
+    activeEras: ["shivaji", "post", "peak", "decline", "today"],
+    wikipediaTitle: "Suvarnadurg",
+    photos: []
+  },
+  {
+    id: "gingee",
+    name: "Gingee Fort",
+    aliases: ["Jinji Fort", "Senji Fort", "Troy of the East"],
+    lat: 12.2524,
+    lng: 79.4188,
+    builtBy: "other",
+    builtYear: "c. 9th century; captured by Shivaji in 1677 during his southern campaign",
+    builder: "Konar chieftains; expanded by Vijayanagara Empire. Captured by Shivaji in 1677.",
+    whyBuilt: "During his famous Karnataka expedition of 1677–78, Shivaji swept south and captured Gingee along with several other forts. After Shivaji's death and the fall of Raigad in 1689, Rajaram — Shivaji's son — fled here and held out for eight years against Aurangzeb's armies, keeping the Maratha spirit alive.",
+    battles: [
+      "Shivaji captured Gingee (1677) during the Karnataka expedition",
+      "Rajaram's resistance (1689–1698) — held Gingee for 8 years against Zulfikhar Khan's Mughal forces, one of history's great sieges",
+      "Mughal capture (1698)",
+      "French and British contests in the 18th century"
+    ],
+    ownershipHistory: [
+      "Konar chieftains",
+      "Vijayanagara Empire",
+      "Bijapur Sultanate",
+      "Shivaji (1677)",
+      "Rajaram — de facto Maratha capital (1689–1698)",
+      "Mughals (1698)",
+      "French",
+      "British"
+    ],
+    funFacts: [
+      "Called the 'Troy of the East' by the Mughals for how long it resisted siege — Rajaram held it for 8 years",
+      "Rajaram Maharaj, Shivaji's second son, kept the Maratha cause alive from here while the entire Deccan fell to Aurangzeb",
+      "Gingee comprises three separate hilltop citadels — Rajagiri, Krishnagiri, and Chakkilidurg — connected by fortified walls",
+      "Listed as a UNESCO World Heritage Site in 2025 as part of Maratha Military Landscapes of India",
+      "Gingee is the southernmost major Maratha fort, deep in present-day Tamil Nadu"
+    ],
+    condition: "Well-preserved. Multiple temples, granaries, and audience halls survive. ASI protected.",
+    canVisit: true,
+    visitInfo: "Gingee town, Villupuram district, Tamil Nadu, ~150 km from Chennai. ASI maintained, open sunrise to sunset, nominal entry fee.",
+    activeEras: ["shivaji", "post", "peak", "decline", "today"],
+    wikipediaTitle: "Gingee_Fort",
+    photos: []
+  },
+  {
+    id: "chakan",
+    name: "Chakan Fort",
+    aliases: ["Chakana Fort", "Sangramgad"],
+    lat: 18.7567,
+    lng: 73.8503,
+    builtBy: "other",
+    builtYear: "Medieval; in Maratha control by 1650s",
+    builder: "Nizam Shahi sultanate; came to Maloji Bhosale (Shivaji's grandfather) as a jagir",
+    whyBuilt: "Chakan controlled the main route between the Deccan plateau and Pune. It was one of the forts inherited by Shivaji through his father Shahaji's jagir and remained a key outpost guarding approaches to Pune.",
+    battles: [
+      "Siege of Chakan (1660) — Shaista Khan sent forces to take Chakan; Firangoji Narsala held the fort for 56 days with minimal troops before surrendering",
+      "Shivaji later recovered the area as Shaista Khan was humiliated at Lal Mahal"
+    ],
+    ownershipHistory: [
+      "Nizam Shahi sultanate",
+      "Maloji and Shahaji Bhosale as jagirdars",
+      "Shivaji's Swarajya",
+      "Mughal forces (1660) after the siege",
+      "Maratha Swarajya again",
+      "Peshwa era",
+      "British"
+    ],
+    funFacts: [
+      "Firangoji Narsala's 56-day defense of Chakan with just a handful of men is celebrated as a heroic stand",
+      "The siege by Shaista Khan's 40,000-strong army against a garrison of perhaps 300 men lasted nearly two months",
+      "Chakan lies just 25 km from Pune — its fall in 1660 was a major blow before Shivaji's counter-raid on Shaista Khan's camp",
+      "The fort is now largely in ruins, with remnants of walls and a gateway visible"
+    ],
+    condition: "Mostly ruins. Some walls and gateways survive amid farmland.",
+    canVisit: true,
+    visitInfo: "Chakan town, Pune district, ~25 km from Pune city. Easy day trip. Ruins are freely accessible.",
+    activeEras: ["pre", "shivaji", "post", "peak", "decline", "today"],
+    wikipediaTitle: "Chakan_Fort",
+    photos: []
+  },
+  {
+    id: "raireshwar",
+    name: "Raireshwar Fort",
+    aliases: ["Raireshwar Plateau"],
+    lat: 18.0950,
+    lng: 73.7200,
+    builtBy: "other",
+    builtYear: "Ancient; became historically significant c. 1645",
+    builder: "Ancient origins; used by Shivaji as a gathering point",
+    whyBuilt: "Raireshwar is where the young Shivaji Maharaj, barely 15–16 years old, gathered his Mavala companions and took a sacred oath (Pratisarpan) to establish Hindavi Swarajya — self-rule for the people. This act on this remote plateau in 1645–46 marks the spiritual founding moment of the Maratha Empire.",
+    battles: [
+      "No major battles — sacred as the site of Shivaji's oath of Swarajya (c. 1645–46)"
+    ],
+    ownershipHistory: [
+      "Ancient local chieftains",
+      "Bijapur Sultanate region",
+      "Came under Maratha Swarajya",
+      "Peshwa era",
+      "British",
+      "Independent India"
+    ],
+    funFacts: [
+      "Shivaji took his famous oath to establish Swarajya at the Raireshwar temple here, said to have cut his finger and offered blood to the deity as part of the vow",
+      "The oath was taken with a small band of Mavala youth — these became the core of his guerrilla army",
+      "The plateau sits at about 1,700 metres elevation and is only reachable by a challenging trek",
+      "A temple dedicated to Lord Shiva (Raireshwar) stands at the spot of the oath; pilgrims visit year-round",
+      "The site is revered as the birthplace of the idea of Maratha Swarajya"
+    ],
+    condition: "Remote plateau with an ancient Shiva temple. No fort structures remain.",
+    canVisit: true,
+    visitInfo: "Near Bhor, Pune district. Base village Ambe. About 2.5-hour tough trek. Best in cooler months (Oct–Feb). Sacred site — remove footwear at temple.",
+    activeEras: ["pre", "shivaji", "post", "peak", "decline", "today"],
+    wikipediaTitle: "Raireshwar",
+    photos: []
+  },
+  {
+    id: "sajjangad",
+    name: "Sajjangad",
+    aliases: ["Sajjan Gad", "Parali Fort"],
+    lat: 17.6480,
+    lng: 74.0096,
+    builtBy: "other",
+    builtYear: "Ancient; gifted by Shivaji to Samarth Ramdas Swami in 1674",
+    builder: "Ancient origins; given by Shivaji to his spiritual guru Ramdas Swami",
+    whyBuilt: "Shivaji gifted Sajjangad to his revered spiritual guide Samarth Ramdas Swami as a residence and hermitage. Ramdas Swami — poet-saint, philosopher, and Shivaji's spiritual inspiration — lived here and composed much of the Dasbodha scripture in the caves nearby. His samadhi (tomb-shrine) here makes it one of the holiest sites in Maharashtra.",
+    battles: [
+      "No significant military battles",
+      "Shivaji visited Ramdas Swami here multiple times — including the famous meeting where Ramdas asked why a warrior sits weeping"
+    ],
+    ownershipHistory: [
+      "Ancient origins",
+      "Bijapur Sultanate region",
+      "Gifted by Shivaji to Samarth Ramdas Swami (1674)",
+      "Continued as a religious institution under Maratha rule",
+      "Ramdas Math (religious trust) — still manages it today"
+    ],
+    funFacts: [
+      "Samarth Ramdas Swami composed major portions of the Dasbodha — a masterwork of Marathi literature and philosophy — in the caves at Sajjangad",
+      "Shivaji's famous exchange with Ramdas, where he symbolically laid down his sword and 'gifted' the entire kingdom to his guru, is associated with this fort",
+      "Ramdas Swami passed away at Sajjangad in 1681 — his samadhi here is visited by hundreds of thousands of pilgrims",
+      "Sajjangad means 'Fort of the Righteous Man' — named after Ramdas Swami's residence",
+      "The fort hosts a major fair on Ram Navami and Ramdas Navami every year"
+    ],
+    condition: "Well maintained as an active temple complex. The Ramdas Math keeps the fort in excellent condition.",
+    canVisit: true,
+    visitInfo: "Near Satara city, Satara district. About 10 km from Satara. Motor road to the base; short walk to the top. Open daily. Samadhi shrine of Ramdas Swami at summit.",
+    activeEras: ["shivaji", "post", "peak", "decline", "today"],
+    wikipediaTitle: "Sajjangad",
+    photos: []
+  },
+  {
+    id: "tung",
+    name: "Tung Fort",
+    aliases: ["Kathingad", "Tung"],
+    lat: 18.6693,
+    lng: 73.4803,
+    builtBy: "other",
+    builtYear: "Medieval; captured by Shivaji c. 1657",
+    builder: "Built by local chieftains; captured by Shivaji and added to the Pawna cluster of forts",
+    whyBuilt: "Tung Fort was part of a strategic cluster of forts — along with Lohagad, Tikona, and Visapur — that controlled the Bor Ghat, the key mountain pass connecting the Konkan coast to the Pune plateau. Together these forts gave Shivaji complete control over this vital corridor.",
+    battles: [
+      "Captured by Shivaji's forces c. 1657",
+      "Mughal attempts to control the Bor Ghat corridor",
+      "British capture during the Third Anglo-Maratha War (1818)"
+    ],
+    ownershipHistory: [
+      "Local Deshmukh chieftains",
+      "Bijapur Sultanate",
+      "Shivaji (c. 1657)",
+      "Mughals briefly",
+      "Marathas / Peshwas",
+      "British (1818)"
+    ],
+    funFacts: [
+      "The name 'Kathingad' means 'difficult fort' — Tung is accessible only by a steep rock-cut staircase and is one of Maharashtra's most challenging treks",
+      "Standing on Tung, you can see Lohagad, Tikona, and (on clear days) Visapur — these four forts together formed a near-impregnable ring",
+      "The fort has a small freshwater cistern near the summit despite the extreme altitude",
+      "Pawna Lake, created by a dam in 1972, now laps at the base of the hill — the fort appears to rise directly from the water"
+    ],
+    condition: "Excellent natural condition. Rock-cut steps intact. Very small summit but spectacular views.",
+    canVisit: true,
+    visitInfo: "Near Pawna Lake, Lonavala area, Pune district. Base village Tungwadi. Steep, adventurous 1-hour climb. Not suitable for children or those with vertigo.",
+    activeEras: ["shivaji", "post", "peak", "decline", "today"],
+    wikipediaTitle: "Tung_Fort",
+    photos: []
+  },
+  {
+    id: "underi",
+    name: "Underi Fort",
+    aliases: ["Kasa Fort", "Underi Island Fort"],
+    lat: 18.6020,
+    lng: 72.8480,
+    builtBy: "shivaji",
+    builtYear: "c. 1680 (fortified by Shivaji); existing island used earlier",
+    builder: "Fortified by Shivaji as a naval companion post to Khanderi Island",
+    whyBuilt: "Underi and Khanderi islands together guarded the sea approaches to Mumbai harbour. The Siddi of Janjira and the British both tried to prevent Shivaji from fortifying Khanderi — Underi was the Siddi-held counterpart. Controlling both islands would have given Shivaji a stranglehold on Bombay Harbour traffic.",
+    battles: [
+      "Khanderi-Underi conflict (1679–1682) — prolonged naval standoff between Shivaji's navy and the combined Siddi-British fleet over control of Khanderi and Underi",
+      "Shivaji's forces seized Khanderi but Underi remained with the Siddi during his lifetime",
+      "Marathas eventually gained Underi under later commanders"
+    ],
+    ownershipHistory: [
+      "Siddi of Janjira",
+      "Contested between Marathas and Siddi / British",
+      "Eventually Maratha control",
+      "British"
+    ],
+    funFacts: [
+      "Underi and Khanderi are two islands less than 5 km apart — whoever held both controlled Mumbai Harbour completely",
+      "The British allied with the Siddi specifically to prevent Shivaji from taking these islands, revealing how seriously they viewed his naval ambitions",
+      "Shivaji's navy under Daulat Khan and Mainak Bhandari fought a multi-year campaign here",
+      "Underi island is today used by the Indian Navy and is not accessible to civilians"
+    ],
+    condition: "Island fort. Not open to public — Indian Navy installation.",
+    canVisit: false,
+    visitInfo: "Indian Navy controlled island off Alibag / Mandwa, Raigad. Not accessible to civilians.",
+    activeEras: ["shivaji", "post", "peak", "decline", "today"],
+    wikipediaTitle: "Underi_Island",
+    photos: []
+  },
+  {
+    id: "mahuli",
+    name: "Mahuli Fort",
+    aliases: ["Mahuli Gad", "Mahuli Trident"],
+    lat: 19.5167,
+    lng: 73.3167,
+    builtBy: "other",
+    builtYear: "Medieval; captured by Shivaji c. 1657",
+    builder: "Bijapur Sultanate; captured by Shivaji's commanders in the northern push",
+    whyBuilt: "Mahuli is the highest fort in Maharashtra's Thane district and commanded the Shayadri range approaches north of Mumbai. Its capture by Shivaji extended Maratha control toward the northern Konkan and into what is today the Mumbai metropolitan region.",
+    battles: [
+      "Shivaji's commanders captured Mahuli c. 1657 as part of the northward expansion",
+      "Mughal attempts to dislodge Maratha control",
+      "British capture (1818)"
+    ],
+    ownershipHistory: [
+      "Local Deshmukh chieftains",
+      "Bijapur Sultanate",
+      "Shivaji (c. 1657)",
+      "Mughals briefly during the war years",
+      "Marathas / Peshwas",
+      "British (1818)"
+    ],
+    funFacts: [
+      "Mahuli is often called the 'Triple Fort' because it has three separate summits — Mahuli, Bhairavgad, and Palasgad — each with its own fortifications",
+      "At about 700 metres, Mahuli is the highest point in the Thane district",
+      "The fort is surrounded by dense monsoon forest and is famous for trekking and biodiversity",
+      "A wildlife sanctuary surrounds the base — leopards and various bird species are found in the area"
+    ],
+    condition: "Natural condition with some stone walls and carvings remaining. Dense forest on approach.",
+    canVisit: true,
+    visitInfo: "Asangaon area, Thane district, about 80 km from Mumbai. Train to Asangaon station, then base village Savarne. Moderate-to-difficult 3-hour trek. Forest department permission sometimes required.",
+    activeEras: ["shivaji", "post", "peak", "decline", "today"],
+    wikipediaTitle: "Mahuli_Fort",
+    photos: []
+  },
+  {
+    id: "jaigad",
+    name: "Jaigad Fort",
+    aliases: ["Jaygad Fort"],
+    lat: 17.0254,
+    lng: 73.1878,
+    builtBy: "other",
+    builtYear: "c. 1660s; captured by Shivaji from the Bijapur Sultanate",
+    builder: "Bijapur Sultanate; captured by Shivaji to control the Shastri river estuary",
+    whyBuilt: "Jaigad guarded the mouth of the Shastri River and the natural harbour at its confluence with the Arabian Sea. For Shivaji's navy, controlling Jaigad meant commanding safe anchorage and resupply for ships operating along the southern Konkan coast, complementing Vijaydurg to the north and Sindhudurg to the south.",
+    battles: [
+      "Captured by Shivaji c. early 1660s as part of Konkan coastal consolidation",
+      "Contested during Aurangzeb's Deccan campaign",
+      "Portuguese and later British naval engagements in the area"
+    ],
+    ownershipHistory: [
+      "Local Desai chieftains",
+      "Bijapur Sultanate",
+      "Shivaji",
+      "Marathas",
+      "British"
+    ],
+    funFacts: [
+      "Jaigad lighthouse, established by the British and still operational, stands within the old fort complex — one of the oldest active lighthouses on India's west coast",
+      "The fort sits on a headland with the Arabian Sea on three sides — a naturally defensive position",
+      "Jaigad harbour is still used by fishing boats and was historically a key Maratha naval resupply point",
+      "The cannon emplacements pointing seaward are still visible and well-preserved",
+      "Jaigad is near Ganpatipule, a major pilgrimage and beach tourism destination"
+    ],
+    condition: "Reasonable condition. Lighthouse still operational. Cannon emplacements visible.",
+    canVisit: true,
+    visitInfo: "Jaigad village, Ratnagiri district. About 25 km from Chiplun. Motorable road to the fort. Combine with Ganpatipule beach visit nearby.",
+    activeEras: ["shivaji", "post", "peak", "decline", "today"],
+    wikipediaTitle: "Jaigad_Fort",
+    photos: []
+  },
 ];
