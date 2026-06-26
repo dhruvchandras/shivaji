@@ -1,11 +1,18 @@
 "use client";
 import { useState } from "react";
 import dynamic from "next/dynamic";
+import FortsTable from "@/components/FortsTable";
 
 const FortsMap = dynamic(() => import("@/components/FortsMap"), { ssr: false });
 const LineageTree = dynamic(() => import("@/components/LineageTree"), { ssr: false });
 
-type Tab = "forts" | "lineage";
+type Tab = "forts" | "fortslist" | "lineage";
+
+const TAB_LABELS: Record<Tab, string> = {
+  forts: "⚔ Forts Map",
+  fortslist: "📋 Forts List",
+  lineage: "🌳 Lineage",
+};
 
 export default function Home() {
   const [tab, setTab] = useState<Tab>("forts");
@@ -26,7 +33,7 @@ export default function Home() {
 
         {/* Tabs */}
         <nav className="ml-6 flex gap-1">
-          {(["forts", "lineage"] as Tab[]).map(t => (
+          {(["forts", "fortslist", "lineage"] as Tab[]).map(t => (
             <button
               key={t}
               onClick={() => setTab(t)}
@@ -36,7 +43,7 @@ export default function Home() {
                   : "text-[#c8973a] hover:bg-[#c8973a]/10 border border-[#c8973a]/30"
               }`}
             >
-              {t === "forts" ? "⚔ Forts Map" : "🌳 Lineage"}
+              {TAB_LABELS[t]}
             </button>
           ))}
         </nav>
@@ -49,6 +56,7 @@ export default function Home() {
       {/* Main content */}
       <main className="flex-1 overflow-hidden">
         {tab === "forts" && <FortsMap />}
+        {tab === "fortslist" && <FortsTable />}
         {tab === "lineage" && <LineageTree />}
       </main>
     </div>
