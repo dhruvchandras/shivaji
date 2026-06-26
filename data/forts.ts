@@ -91,7 +91,8 @@ export const forts: Fort[] = [
       "Tanaji Malusare's heroism at this fort is legendary — he tied his lizard 'Yashwanti' to a rope to scale the cliff",
       "The fort is visible from Pune city on a clear day",
       "A popular trekking destination today; known for local dishes like zunka-bhakar and lassi at the top",
-      "Rajaram, Shivaji's son, died of illness here in 1700"
+      "Rajaram, Shivaji's son, died of illness here in 1700",
+      "The fort's ancient name was 'Kondana' — the nearby 2nd–1st century BCE Buddhist rock-cut Kondana Caves share this name"
     ],
     condition: "Substantial ruins remain. Tanaji's memorial is well-preserved.",
     canVisit: true,
@@ -755,34 +756,4 @@ export const forts: Fort[] = [
     wikipediaTitle: "Ajinkyatara",
     photos: []
   },
-  {
-    id: "kondana",
-    name: "Kondana Fort",
-    aliases: ["Kondana Caves Fort"],
-    lat: 18.3521,
-    lng: 73.6978,
-    builtBy: "other",
-    builtYear: "Ancient; used by Shivaji",
-    builder: "Ancient; earlier form of Sinhagad — some accounts treat them as same",
-    whyBuilt: "Kondana (an older name for the Sinhagad complex area) was a strategic point in the Pune region used by Shivaji in early campaigns. The Kondana Caves nearby (2nd–1st century BCE Buddhist caves) show ancient habitation.",
-    battles: [
-      "Associated with early Maratha campaigns near Pune"
-    ],
-    ownershipHistory: [
-      "Ancient Buddhist monastic use (Kondana Caves)",
-      "Medieval fort construction",
-      "Maratha use"
-    ],
-    funFacts: [
-      "The nearby Kondana Caves are 2nd–1st century BCE Buddhist rock-cut caves",
-      "The area forms part of the Sinhagad-Rajgad fort cluster that controlled Pune's western defenses",
-      "Kondana is sometimes cited as the pre-Maratha name of the Sinhagad fort area"
-    ],
-    condition: "Archaeological area. Caves well-preserved.",
-    canVisit: true,
-    visitInfo: "Near Sinhagad, 30 km from Pune. Combined visit with Sinhagad trek possible.",
-    activeEras: ["pre", "shivaji", "post", "peak", "decline", "today"],
-    wikipediaTitle: "Kondana_caves",
-    photos: []
-  }
 ];
