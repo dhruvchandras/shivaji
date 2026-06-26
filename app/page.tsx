@@ -4,14 +4,12 @@ import dynamic from "next/dynamic";
 import FortsTable from "@/components/FortsTable";
 
 const FortsMap = dynamic(() => import("@/components/FortsMap"), { ssr: false });
-const LineageTree = dynamic(() => import("@/components/LineageTree"), { ssr: false });
 
-type Tab = "forts" | "fortslist" | "lineage";
+type Tab = "forts" | "fortslist";
 
 const TAB_LABELS: Record<Tab, string> = {
   forts: "⚔ Forts Map",
   fortslist: "📋 Forts List",
-  lineage: "🌳 Lineage",
 };
 
 export default function Home() {
@@ -33,7 +31,7 @@ export default function Home() {
 
         {/* Tabs */}
         <nav className="ml-6 flex gap-1">
-          {(["forts", "fortslist", "lineage"] as Tab[]).map(t => (
+          {(["forts", "fortslist"] as Tab[]).map(t => (
             <button
               key={t}
               onClick={() => setTab(t)}
@@ -57,7 +55,6 @@ export default function Home() {
       <main className="flex-1 overflow-hidden">
         {tab === "forts" && <FortsMap />}
         {tab === "fortslist" && <FortsTable />}
-        {tab === "lineage" && <LineageTree />}
       </main>
     </div>
   );
